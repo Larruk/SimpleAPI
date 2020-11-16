@@ -5,6 +5,7 @@ This API runs via .NET 5.0 and utilizes swagger to create documentation that can
 Requirements
 ==================================================================================
 Visual Studio 16.8.1 (Support for .NET 5.0)
+
 .NET 5.0 SDK: https://dotnet.microsoft.com/download/visual-studio-sdks
 
 
