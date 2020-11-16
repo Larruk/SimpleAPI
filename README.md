@@ -13,10 +13,14 @@ Steps to Run
 ==================================================================================
 1. Navigate to SimpleWebAPI/InitialSetup.ps1
 2. Right click and run via PowerShell
+
 	WARNING: This script will do the following:
-		- Install dotnet-ef (failure is expected if you already have this)
-		- Attempt to remove this projects migrations (in case of reruns, failure is ok here on first time)
-		- Create migrations and update localdb
+	
+		* Install dotnet-ef (failure is expected if you already have this)
+		
+		* Attempt to remove this projects migrations (in case of reruns, failure is ok here on first time)
+		
+		* Create migrations and update localdb
 3. Open SimpleWebAPI.sln via Visual Studio
 4. Build / Run the project
 5. Project will launch a web page to Swagger UI showing documentation on the two created endpoints
