@@ -2,7 +2,7 @@ $Uri = 'https://localhost:5001/people?query='
 
 $RunQuery = {
 	$Query = Read-Host -Prompt 'Query'
-	Invoke-WebRequest -Method Get -Uri ($Uri + $Query)
+	(Invoke-WebRequest -Method Get -Uri ($Uri + $Query)).Content | ConvertFrom-Json | ConvertTo-Json 
 	&$GetUserInput
 }
 
