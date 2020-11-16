@@ -28,6 +28,14 @@ Steps to Run
 5. Project will launch a web page to Swagger UI showing documentation on the two created endpoints
 6. Here you can click Try It Out to test the endpoints
 
+Additional Scripts
+==================================================================================
+The two additional scripts are useful once you have the API running via Visual Studio.
+
+Inside of SimpleWebAPI you can find `Add-Person.ps1` which will prompt the user for simple data to create the payload then fire it off to the API.
+
+The other script `Search-Person.ps1` will ask for a query and then retreives any people whose first or last name contains that query.
+
 Troubleshooting
 ==================================================================================
-The only issues I've ran into involve running the set up script more than once or deleting the db
+The only issues I've ran into involve running the set up script more than once or deleting the db. Usually these are both resolved bygoing to your user folder and deleting the `PersonContext1.mdf` file and matching log, then rerunning the set up script.
