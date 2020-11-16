@@ -32,5 +32,10 @@
             </summary>
             <param name="p">Person to add</param>
         </member>
+        <member name="M:LatencyMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Intercept the request coming through, add random delay then resolve it
+            </summary>
+        </member>
     </members>
 </doc>

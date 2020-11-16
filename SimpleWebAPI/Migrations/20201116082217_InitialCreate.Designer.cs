@@ -9,7 +9,7 @@ using SimpleWebAPI.Data;
 namespace SimpleWebAPI.Migrations
 {
     [DbContext(typeof(PersonContext))]
-    [Migration("20201115185347_InitialCreate")]
+    [Migration("20201116082217_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
