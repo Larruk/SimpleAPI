@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SimpleWebAPI.Services {
     public interface IPersonRepository {
-        List<Person> Get(string query);
+        List<Person> GetAll();
         void Add(Person p);
 
     }
@@ -22,10 +22,8 @@ namespace SimpleWebAPI.Services {
         /// </summary>
         /// <param name="query">Optional, defaults to empty string</param>
         /// <returns></returns>
-        public List<Person> Get(string query = "") {
-            return personContext.Persons.Where(x =>
-                x.FirstName.ToLower().Contains(query) || x.LastName.ToLower().Contains(query)
-            ).ToList();
+        public List<Person> GetAll() {
+            return personContext.Persons.ToList();
         }
 
         /// <summary>

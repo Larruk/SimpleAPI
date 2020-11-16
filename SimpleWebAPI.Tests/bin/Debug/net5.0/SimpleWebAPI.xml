@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleWebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:SimpleWebAPI.Controllers.PersonController.Get(System.String)">
+            <summary>
+             Fetch all the people in the database, with an optional search query
+            </summary>
+            <param name="query">Defaults to blank string if not provided, uses a Contains() search for first/last name.</param>
+            <returns code="200">Successfully retrieved all people in the database</returns>
+            <returns code="500">Something went wrong during setup or when fetching of people</returns>
+        </member>
+        <member name="M:SimpleWebAPI.Controllers.PersonController.Create(SimpleWebAPI.Person)">
+            <summary>
+            Add a person to the database
+            </summary>
+            <param name="person"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleWebAPI.Services.PersonRepository.GetAll">
+            <summary>
+            Grabs all people in the database with an optional query
+            </summary>
+            <param name="query">Optional, defaults to empty string</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleWebAPI.Services.PersonRepository.Add(SimpleWebAPI.Person)">
+            <summary>
+            Add a person to the db
+            </summary>
+            <param name="p">Person to add</param>
+        </member>
+    </members>
+</doc>

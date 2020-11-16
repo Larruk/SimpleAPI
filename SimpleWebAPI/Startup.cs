@@ -1,16 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SimpleWebAPI.Data;
 using SimpleWebAPI.Services;
@@ -18,8 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SimpleWebAPI
 {
-    public class Startup
-    {
+    public class Startup {
         public Startup(IConfiguration configuration) {
             Configuration = configuration;
         }
@@ -49,6 +42,10 @@ namespace SimpleWebAPI
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "SimpleWebAPI v1");                    
                     c.RoutePrefix = string.Empty;
                 });
+
+                var min = TimeSpan.FromMilliseconds(Configuration.GetValue<int>("LatencyMinimum"));
+                var max = TimeSpan.FromMilliseconds(Configuration.GetValue<int>("LatencyMaximum"));
+                app = UseSimulatedLatency(app, min, max);
             }
 
             app.UseHttpsRedirection();
@@ -60,6 +57,9 @@ namespace SimpleWebAPI
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
             });
+        }
+        public IApplicationBuilder UseSimulatedLatency(IApplicationBuilder app, TimeSpan min, TimeSpan max) {
+            return app.UseMiddleware(typeof(LatencyMiddleware), min, max);
         }
     }
 }
