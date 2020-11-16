@@ -6,6 +6,8 @@ Requirements
 ==================================================================================
 Visual Studio 16.8.1 (Support for .NET 5.0)
 
+SQL Server Express LocalDB: https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver15
+
 .NET 5.0 SDK: https://dotnet.microsoft.com/download/visual-studio-sdks
 
 
