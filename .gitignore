@@ -1,0 +1,11 @@
+SimpleWebAPI/bin/
+
+SimpleWebAPI/obj/
+
+SimpleWebAPI.Tests/bin/
+
+SimpleWebAPI.Tests/obj/
+
+SimpleWebAPI/Migrations/
+
+SimpleWebAPI/.vs/SimpleWebAPI/DesignTimeBuild/
